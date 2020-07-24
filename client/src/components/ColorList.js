@@ -25,7 +25,11 @@ const ColorList = ({ colors, updateColors }) => {
 
   const deleteColor = color => {
     // make a delete request to delete this color
-  };
+    axios.delete(`http://localhost:5000/api/colors/${colors.id}`)
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
+
+    };
 
   return (
     <div className="colors-wrap">
